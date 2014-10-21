@@ -1,0 +1,24 @@
+{
+  "name": "fanzine",
+  "version": "1.0.0",
+  "description": "Website de En Los Nervios",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "authors": [
+    "Eduardo Delgaldo"
+  ],
+  "license": "GPL",
+  "homepage": "http://enlosnervios.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0+2"
+  }
+}
