@@ -1,36 +1,102 @@
-$navbar-height: 100px;
+$navbar-height: 60px;
+$navbar-default-bg: #fff;
+$navbar-default-link-color: #333;
 
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic);
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
 
+@font-face {
+    font-family: "Universalis";
+    src: url("../fonts/UniversalisADFStd-Cond.woff");
+}
+
 body {
+    font-family: "Open Sans Condensed";
     padding-top: 19px;
 }
 
-h2 {
-    font-family: 'Amatic SC', sans-serif;
-}
 nav {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
 }
 
+.navbar-brand {
+    width: 500px;
+
+    h1 {
+        line-height: 0em;
+        font-family: "Universalis";
+        font-size: 2.5em;
+        letter-spacing: -2px;
+        margin-left: 10px;
+    }
+
+}
+
+.navbar-nav {
+    a:hover,
+    .current_page_item a {
+        border-bottom: 2px solid $navbar-default-link-color;
+        padding-bottom: 5px;
+    }
+}
+
 #banner {
-    height: 400px;
+    background-color: #fff;
+    height: 500px;
     padding: 0;
+    margin-top: 40px;
     overflow: hidden;
+
+    aside {
+        float: left;
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    a {
+        font-weight: bold;
+    }
+
+    h1 {
+        font-family: "Universalis";
+        text-transform: uppercase;
+    }
+
+    img {
+        float: left;
+    }
+
+    p {
+        line-height: 1.6em;
+    }
+
 }
 
 #main {
     .container {
         padding-top: 60px;
     }
+
+    h1 {
+        font-family: 4em;
+        margin-bottom: 50px;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
 }
 
 .navbar-brand {
     padding: 10px;
+
+    a {
+        color: $navbar-default-link-color;
+        text-decoration: none;
+    }
 }
