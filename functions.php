@@ -13,7 +13,8 @@ function register_fanzines() {
     $args = array(
         'public' => true,
         'label'  => "Fanzines",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' )
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'taxonomies' => array( 'post_tag' )
     );
 
     register_post_type( 'fanzine', $args );
@@ -24,7 +25,8 @@ function register_books() {
     $args = array(
         'public' => true,
         'label'  => "Libros y Zines",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' )
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'taxonomies' => array( 'category', 'post_tag' )
     );
 
     register_post_type( 'book', $args );
@@ -36,7 +38,8 @@ function register_albums() {
     $args = array(
         'public' => true,
         'label'  => "Discos",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' )
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'taxonomies' => array( 'category', 'post_tag' )
     );
 
     register_post_type( 'album', $args );
@@ -55,10 +58,24 @@ function get_section_content( $post_type ) {
     $fanzines = new WP_Query( array( 'post_type' => $post_type, 'posts_per_page' => 6 ) );
 
     if ( $fanzines->have_posts() ) :
-        while ( $fanzines->have_posts() ) : $fanzines->the_post(); ?>
+        while ( $fanzines->have_posts() ) : $fanzines->the_post();
+            $post_tag = get_the_tags(); ?>
+
             <div class="col-xs-5 col-md-2">
                 <a href="<?php the_permalink(); ?>" class="thumbnail">
                     <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+                    <div class="caption">
+                        <p><strong><?php the_title(); ?></strong></p>
+                        <?php
+                            if ( $post_tag ) : ?>
+                                <p><?php
+                                foreach ( $post_tag as $tag ) :
+                                    echo $tag->name;
+                                endforeach; ?>
+                                </p><?php
+                            endif;
+                        ?>
+                    </div>
                 </a>
             </div>
         <?php endwhile;

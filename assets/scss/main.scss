@@ -1,6 +1,9 @@
 $navbar-height: 60px;
 $navbar-default-bg: #fff;
 $navbar-default-link-color: #333;
+$thumbnail-padding: 2px;
+$thumbnail-border-radius: 0px;
+$thumbnail-caption-padding: 9px 9px 0px;
 
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
@@ -87,12 +90,17 @@ nav {
         margin-bottom: 50px;
     }
 
-    p {
-        font-size: 1.5em;
+    section {
+        margin-bottom: 100px;
+
+        h2 {
+            text-transform: uppercase;
+        }
+
     }
 
-    section h2 {
-        text-transform: uppercase;
+    small {
+        margin-left: 20px;
     }
 
     .thumbnail {
