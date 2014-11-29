@@ -6,7 +6,7 @@
             <?php if ( have_posts() ) :
 
               while ( have_posts() ) : the_post(); ?>
-                  <article class="col-md-10">
+                  <article class="col-md-12">
                       <?php the_content(); ?>
                   </article>
               <?php endwhile;

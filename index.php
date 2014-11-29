@@ -10,17 +10,24 @@
     <div id="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h2>En Los Nervios #6</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
+                <div class="col-md-12">
+                    <h2>Fanzine En Los Nervios</h2>
+                    <hr>
+                    <?php get_section_content( 'fanzine' ); ?>
                 </div>
-                <div class="col-md-4">
-                    <h2>Catálogo de álbumes</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Libros y otros fanzines</h2>
+                    <hr>
+                    <?php get_section_content( 'book' ); ?>
                 </div>
-                <div class="col-md-4">
-                    <h2>Catálogo de la editorial</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Ediciones en vinilo, cassette y CD</h2>
+                    <hr>
+                    <?php get_section_content( 'album' ); ?>
                 </div>
             </div>
         </div>
