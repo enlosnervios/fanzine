@@ -17,10 +17,6 @@ body {
     padding-top: 19px;
 }
 
-h2 {
-    font-weight: bold;
-}
-
 nav {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
@@ -93,6 +89,18 @@ nav {
 
     p {
         font-size: 1.5em;
+    }
+
+    section h2 {
+        text-transform: uppercase;
+    }
+
+    .thumbnail {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
     }
 }
 

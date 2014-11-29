@@ -56,7 +56,7 @@ function get_section_content( $post_type ) {
 
     if ( $fanzines->have_posts() ) :
         while ( $fanzines->have_posts() ) : $fanzines->the_post(); ?>
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-5 col-md-2">
                 <a href="<?php the_permalink(); ?>" class="thumbnail">
                     <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
                 </a>
