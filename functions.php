@@ -52,7 +52,7 @@ function get_banner_introduction() {
 }
 
 function get_section_content( $post_type ) {
-    $fanzines = new WP_Query( array( 'post_type' => $post_type ) );
+    $fanzines = new WP_Query( array( 'post_type' => $post_type, 'posts_per_page' => 6 ) );
 
     if ( $fanzines->have_posts() ) :
         while ( $fanzines->have_posts() ) : $fanzines->the_post(); ?>
