@@ -110,6 +110,12 @@ nav {
             width: 100%;
         }
     }
+    .caption p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
 }
 
 .navbar-brand {
