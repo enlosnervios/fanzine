@@ -9,24 +9,21 @@
 
     <div id="main">
         <div class="container">
-            <div class="row">
+            <div class="row row-fanzines">
                 <section class="col-md-12">
-                    <h2>Fanzine En Los Nervios <small><a href="<?php echo get_permalink( get_page_by_path( 'fanzine' )->ID ); ?>">Ver catálogo completo</a></small></h2>
-                    <hr>
+                    <h2>Fanzine En Los Nervios <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'fanzine' )->ID ); ?>">Ver catálogo completo</a></small></h2>
                     <?php get_section_content( 'fanzine' ); ?>
                 </section>
             </div>
             <div class="row">
                 <section class="col-md-12">
-                    <h2>Libros y otros fanzines <small><a href="<?php echo get_permalink( get_page_by_path( 'editorial' )->ID ); ?>">Ver catálogo completo</a></small></h2>
-                    <hr>
+                    <h2>Libros y otros fanzines <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'editorial' )->ID ); ?>">Ver catálogo completo</a></small></h2>
                     <?php get_section_content( 'book' ); ?>
                 </section>
             </div>
             <div class="row">
                 <section class="col-md-12">
-                    <h2>Ediciones en vinilo, cassette y CD <small><a href="<?php echo get_permalink( get_page_by_path( 'sello' )->ID ); ?>">Ver catálogo completo</a></small></h2>
-                    <hr>
+                    <h2>Ediciones en vinilo, cassette y CD <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'sello' )->ID ); ?>">Ver catálogo completo</a></small></h2>
                     <?php get_section_content( 'album' ); ?>
                 </section>
             </div>
