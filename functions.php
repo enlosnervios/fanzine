@@ -54,6 +54,32 @@ function get_banner_introduction() {
     endwhile;
 }
 
+function get_blog_recent_posts() {
+    if ( function_exists( 'switch_to_blog' ) ) {
+        preg_match( '/http:\/\/([a-zA-Z|\D]+)/', get_bloginfo( 'siteurl' ), $site_url );
+
+        $blog_url = 'blog.' . $site_url[1];
+
+        switch_to_blog( get_blog_id_from_url( $blog_url ) );
+
+        $blog_posts = new WP_Query( array( 'post_status' => 'publish', 'posts_per_page' => 2 ) );
+
+        if ( $blog_posts->have_posts() ) :
+            while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
+                <div class="col-md-4">
+                    <h1><?php the_title(); ?></h1>
+                </div>
+
+                <article class="col-md-8">
+                    <?php the_content( 'Leer más' ); ?>
+                </article><?php
+            endwhile;
+        endif;
+
+        restore_current_blog();
+    }
+}
+
 function get_section_content( $post_type ) {
     $fanzines = new WP_Query( array( 'post_type' => $post_type, 'posts_per_page' => 6 ) );
 

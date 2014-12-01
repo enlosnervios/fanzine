@@ -9,6 +9,12 @@
 
     <div id="main">
         <div class="container">
+            <div class="row">
+                <section class="col-md-12 recent-posts">
+                    <h3>Últimas entradas del Blog</h3>
+                    <?php get_blog_recent_posts(); ?>
+                </section>
+            </div>
             <div class="row row-fanzines">
                 <section class="col-md-12">
                     <h2>Fanzine En Los Nervios <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'fanzine' )->ID ); ?>">Ver catálogo completo</a></small></h2>
