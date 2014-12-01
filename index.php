@@ -11,8 +11,8 @@
         <div class="container">
             <div class="row">
                 <section class="col-md-12 recent-posts">
-                    <h3>Últimas entradas del Blog</h3>
-                    <?php get_blog_recent_posts(); ?>
+                    <h3>Última entrada del <strong>Blog</strong></h3>
+                    <?php get_blog_recent_post(); ?>
                 </section>
             </div>
             <div class="row row-fanzines">

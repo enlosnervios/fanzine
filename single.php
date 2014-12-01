@@ -7,7 +7,10 @@
 
               while ( have_posts() ) : the_post(); ?>
                   <article class="col-md-8 col-md-offset-2">
-                      <?php the_content(); ?>
+                        <h1><?php the_title(); ?></h1>
+                      <?php
+                          the_content();
+                      ?>
                   </article>
               <?php endwhile;
 
@@ -15,6 +18,5 @@
             </div>
         </div>
     </div>
-
 
 <?php get_footer(); ?>

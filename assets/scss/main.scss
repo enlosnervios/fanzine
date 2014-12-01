@@ -56,6 +56,16 @@ p {
     }
 }
 
+#blog,
+.single {
+    h2 {
+        text-align: center;
+    }
+    p {
+        font-family: $font-family-sans-serif;
+    }
+}
+
 #banner {
     background-color: #fff;
     height: 500px;
@@ -78,9 +88,13 @@ p {
         text-transform: uppercase;
     }
 
-    h2 {
-        font-size: 1.6em;
-        line-height: 1.6em;
+    blockquote {
+        border-left: none;
+        padding-left: 0;
+
+        p {
+            font-size: 1em !important;
+        }
     }
 
     img {
@@ -133,6 +147,8 @@ p {
     }
 
     .recent-posts {
+        margin-bottom: 20px;
+
         article {
             -moz-column-count: 2;
             -webkit-column-count: 2;
@@ -150,8 +166,8 @@ p {
     .row-fanzines {
         background-color: #eee;
         box-shadow: inset 0 0 5px #aaa;
-        margin-bottom: 50px;
     }
+
 }
 
 .navbar-brand {

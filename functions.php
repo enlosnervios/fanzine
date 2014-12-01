@@ -46,6 +46,20 @@ function register_albums() {
 }
 add_action( 'init', 'register_albums' );
 
+function body_id() {
+    $id = is_blog_subdomain() ? "blog" : "portal";
+
+    echo "id=\"$id\"";
+}
+
+function is_blog_subdomain() {
+    $current_site = get_current_site();
+    $blog_details = get_blog_details();
+    $blog_url     = 'blog.' . $current_site->domain;
+
+    return $blog_details->domain == $blog_url;
+}
+
 function get_banner_introduction() {
     $about_page = new WP_Query( array( 'pagename' => 'acerca-de' ) );
 
@@ -54,15 +68,14 @@ function get_banner_introduction() {
     endwhile;
 }
 
-function get_blog_recent_posts() {
+function get_blog_recent_post() {
     if ( function_exists( 'switch_to_blog' ) ) {
-        preg_match( '/http:\/\/([a-zA-Z|\D]+)/', get_bloginfo( 'siteurl' ), $site_url );
-
-        $blog_url = 'blog.' . $site_url[1];
+        $site = get_current_site();
+        $blog_url = 'blog.' . $site->domain;
 
         switch_to_blog( get_blog_id_from_url( $blog_url ) );
 
-        $blog_posts = new WP_Query( array( 'post_status' => 'publish', 'posts_per_page' => 2 ) );
+        $blog_posts = new WP_Query( array( 'post_status' => 'publish', 'posts_per_page' => 1 ) );
 
         if ( $blog_posts->have_posts() ) :
             while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
