@@ -88,6 +88,10 @@ p {
             color:lighten( $brand-primary, 20%);
             padding: 2px;
         }
+
+        ul {
+            margin-bottom: 0;
+        }
     }
 
     h1 {

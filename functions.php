@@ -3,6 +3,8 @@ add_theme_support( 'custom-header' );
 
 add_theme_support( 'post-thumbnails' );
 
+add_theme_support( 'html5', array( 'comment-form', 'comment-list' ) );
+
 function register_main_menu()
 {
       register_nav_menu( 'main-menu',__( 'Menu de cabecera' ) );
@@ -36,7 +38,7 @@ function register_books()
 add_action( 'init', 'register_books' );
 
 
-function register_albums()
+function register_records()
 {
     $args = array(
         'public'     => true,
@@ -45,9 +47,34 @@ function register_albums()
         'taxonomies' => array( 'category', 'post_tag' )
     );
 
-    register_post_type( 'album', $args );
+    register_post_type( 'record', $args );
 }
-add_action( 'init', 'register_albums' );
+add_action( 'init', 'register_records' );
+
+function get_post_type_by_page_name()
+{
+    global $post;
+
+    $post_type = '';
+
+    switch ( $post->post_name )
+    {
+        case 'fanzine':
+            $post_type = 'fanzine';
+            break;
+        case 'editorial':
+            $post_type = 'book';
+            break;
+        case 'sello':
+            $post_type = 'record';
+            break;
+        default:
+            $post_type = $post->post_name;
+            break;
+    }
+
+    return $post_type;
+}
 
 function body_id()
 {
@@ -119,12 +146,13 @@ function get_section_content( $post_type )
         'post_type'      => $post_type,
         'posts_per_page' => 6
     ) );
+    $column_class = is_home() ? 'col-md-2' : 'col-md-3';
 
     if ( $fanzines->have_posts() ) :
         while ( $fanzines->have_posts() ) : $fanzines->the_post();
             $post_tag = get_the_tags(); ?>
 
-            <div class="col-xs-5 col-md-2">
+            <div class="col-xs-5 <?php echo $column_class; ?>">
                 <a href="<?php the_permalink(); ?>" class="thumbnail">
                     <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
                     <div class="caption">

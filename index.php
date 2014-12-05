@@ -24,7 +24,7 @@
             <div class="row">
                 <section class="col-md-12">
                     <h2>Ediciones en vinilo, cassette y CD <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'sello' )->ID ); ?>">Ver catálogo completo</a></small></h2>
-                    <?php get_section_content( 'album' ); ?>
+                    <?php get_section_content( 'record' ); ?>
                 </section>
             </div>
             <div class="row">
@@ -53,11 +53,11 @@
                     <div class="legal info-column col-md-4">
                         <p>Algunos derechos reservados 2014.
                         <p>Todos los textos de enlosnervios.org son publicados bajo los términos de la licencia
-                        <strong>Creative Commons CC-BY 4.0 Internacional</strong>.</p>
+                        <strong>Creative Commons CC-Atribución 4.0 Internacional</strong>.</p>
                         <p><i class="openwebicons-cc"></i> <i class="openwebicons-cc-by"></i> </p>
                         <ul class="list-inline">
                             <li><a href="http://github.com/enlosnervios/fanzine">Código fuente de este sitio</a></li>
-                            <li>| <a href="#">Paquete de difusión</a></li>
+                            <li><a href="#">Paquete de difusión</a></li>
                         </ul>
                     </div>
                 </div>

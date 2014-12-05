@@ -8,6 +8,7 @@
               while ( have_posts() ) : the_post(); ?>
                   <article class="col-md-8 col-md-offset-2">
                       <h1><?php the_title(); ?></h1>
+
                       <?php get_blog_post_aside(); ?>
 
                       <?php the_content(); ?>
