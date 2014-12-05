@@ -144,7 +144,8 @@ function get_section_content( $post_type )
 {
     $fanzines = new WP_Query( array(
         'post_type'      => $post_type,
-        'posts_per_page' => is_home() ? 6 : -1
+        'posts_per_page' => is_home() ? 6 : -1,
+        'post_status'    => 'publish'
     ) );
     $column_class = is_home() ? 'col-md-2' : 'col-md-3';
 
