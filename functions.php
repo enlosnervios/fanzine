@@ -38,7 +38,7 @@ function register_books()
 add_action( 'init', 'register_books' );
 
 
-function register_records()
+function register_albums()
 {
     $args = array(
         'public'     => true,
@@ -47,9 +47,9 @@ function register_records()
         'taxonomies' => array( 'category', 'post_tag' )
     );
 
-    register_post_type( 'record', $args );
+    register_post_type( 'album', $args );
 }
-add_action( 'init', 'register_records' );
+add_action( 'init', 'register_albums' );
 
 function get_post_type_by_page_name()
 {
@@ -66,7 +66,7 @@ function get_post_type_by_page_name()
             $post_type = 'book';
             break;
         case 'sello':
-            $post_type = 'record';
+            $post_type = 'album';
             break;
         default:
             $post_type = $post->post_name;

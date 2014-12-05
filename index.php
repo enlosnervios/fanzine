@@ -24,7 +24,7 @@
             <div class="row">
                 <section class="col-md-12">
                     <h2>Ediciones en vinilo, cassette y CD <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'sello' )->ID ); ?>">Ver catálogo completo</a></small></h2>
-                    <?php get_section_content( 'record' ); ?>
+                    <?php get_section_content( 'album' ); ?>
                 </section>
             </div>
             <div class="row">
