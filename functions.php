@@ -3,17 +3,18 @@ add_theme_support( 'custom-header' );
 
 add_theme_support( 'post-thumbnails' );
 
-
-function register_main_menu() {
-      register_nav_menu('main-menu',__( 'Menu de cabecera' ));
+function register_main_menu()
+{
+      register_nav_menu( 'main-menu',__( 'Menu de cabecera' ) );
 }
 add_action( 'init', 'register_main_menu' );
 
-function register_fanzines() {
+function register_fanzines()
+{
     $args = array(
-        'public' => true,
-        'label'  => "Fanzines",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'public'     => true,
+        'label'      => "Fanzines",
+        'supports'   => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
         'taxonomies' => array( 'post_tag' )
     );
 
@@ -21,11 +22,12 @@ function register_fanzines() {
 }
 add_action( 'init', 'register_fanzines' );
 
-function register_books() {
+function register_books()
+{
     $args = array(
-        'public' => true,
-        'label'  => "Libros y Zines",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'public'     => true,
+        'label'      => "Libros y Zines",
+        'supports'   => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
         'taxonomies' => array( 'category', 'post_tag' )
     );
 
@@ -34,11 +36,12 @@ function register_books() {
 add_action( 'init', 'register_books' );
 
 
-function register_albums() {
+function register_albums()
+{
     $args = array(
-        'public' => true,
-        'label'  => "Discos",
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+        'public'     => true,
+        'label'      => "Discos",
+        'supports'   => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
         'taxonomies' => array( 'category', 'post_tag' )
     );
 
@@ -46,13 +49,15 @@ function register_albums() {
 }
 add_action( 'init', 'register_albums' );
 
-function body_id() {
+function body_id()
+{
     $id = is_blog_subdomain() ? "blog" : "portal";
 
     echo "id=\"$id\"";
 }
 
-function is_blog_subdomain() {
+function is_blog_subdomain()
+{
     $current_site = get_current_site();
     $blog_details = get_blog_details();
     $blog_url     = 'blog.' . $current_site->domain;
@@ -60,7 +65,8 @@ function is_blog_subdomain() {
     return $blog_details->domain == $blog_url;
 }
 
-function get_banner_introduction() {
+function get_banner_introduction()
+{
     $about_page = new WP_Query( array( 'pagename' => 'acerca-de' ) );
 
     while( $about_page->have_posts() ) : $about_page->the_post();
@@ -68,8 +74,10 @@ function get_banner_introduction() {
     endwhile;
 }
 
-function get_blog_recent_post() {
-    if ( function_exists( 'switch_to_blog' ) ) {
+function get_blog_recent_post()
+{
+    if ( function_exists( 'switch_to_blog' ) )
+    {
         $site = get_current_site();
         $blog_url = 'blog.' . $site->domain;
 
@@ -84,7 +92,7 @@ function get_blog_recent_post() {
                 </div>
 
                 <article class="col-md-8">
-                    <?php the_content( 'Leer más' ); ?>
+                    <?php the_content( 'Leer más »' ); ?>
                 </article><?php
             endwhile;
         endif;
@@ -93,8 +101,24 @@ function get_blog_recent_post() {
     }
 }
 
-function get_section_content( $post_type ) {
-    $fanzines = new WP_Query( array( 'post_type' => $post_type, 'posts_per_page' => 6 ) );
+function get_blog_post_aside()
+{ ?>
+    <aside>
+        <ul class="list-inline">
+            <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Publicado el <?php the_date(); ?></li>
+            <li><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <?php the_category( ' ' ); ?></li>
+        </ul>
+    </aside>
+
+<?php
+}
+
+function get_section_content( $post_type )
+{
+    $fanzines = new WP_Query( array(
+        'post_type'      => $post_type,
+        'posts_per_page' => 6
+    ) );
 
     if ( $fanzines->have_posts() ) :
         while ( $fanzines->have_posts() ) : $fanzines->the_post();
@@ -121,7 +145,8 @@ function get_section_content( $post_type ) {
     endif;
 }
 
-function autop_the_content( $content ) {
+function autop_the_content( $content )
+{
     return wpautop( $content );
 }
 add_filter( 'the_content', 'autop_the_content');

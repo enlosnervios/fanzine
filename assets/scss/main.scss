@@ -1,19 +1,27 @@
-$navbar-height: 60px;
-$navbar-default-bg: #fff;
-$navbar-default-link-color: #333;
-$thumbnail-padding: 2px;
-$thumbnail-border-radius: 0px;
-$thumbnail-caption-padding: 9px 9px 0px;
+$navbar-height             : 60px;
+$navbar-default-bg         : #fff;
+$navbar-default-link-color : #333;
+$thumbnail-padding         : 2px;
+$thumbnail-border-radius   : 0px;
+$thumbnail-caption-padding : 9px 9px 0px;
+$icon-font-path            : "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700,300italic);
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+@import url(http://weloveiconfonts.com/api/?family=openwebicons);
 
 @font-face {
     font-family: "Universalis";
     src: url("../fonts/UniversalisADFStd-Cond.woff");
+}
+
+/* openwebicons */
+[class*="openwebicons-"]:before {
+  font-family: 'OpenWeb Icons', sans-serif;
+  font-style: normal;
 }
 
 body {
@@ -52,6 +60,10 @@ p {
         margin-left: 10px;
     }
 
+    small {
+        line-height: 0;
+    }
+
 }
 
 .navbar-nav {
@@ -64,11 +76,42 @@ p {
 
 #blog,
 .single {
+    aside {
+        border-top: 1px dashed #ccc;
+        border-bottom: 1px dashed #ccc;
+        color: #666;
+        margin-bottom: 20px;
+        padding: 5px 0;
+
+        a {
+            background: lighten( $brand-primary, 50%);
+            color:lighten( $brand-primary, 20%);
+            padding: 2px;
+        }
+    }
+
+    h1 {
+        margin-bottom: 20px !important;
+    }
+    h1 a {
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    h1 a:hover {
+        background: lighten( $brand-primary,50%);
+    }
+
     h2 {
         text-align: center;
     }
+
     p {
         font-family: $font-family-sans-serif;
+    }
+
+    #comments {
+        margin-top: 50px;
     }
 }
 
@@ -184,6 +227,10 @@ p {
         padding-bottom: 0 !important;
     }
 
+    i {
+        font-size: 2em;
+    }
+
     .info-column {
         border-right: 1px solid #666;
     }
@@ -194,5 +241,10 @@ p {
 
     .row {
         margin: 0;
+    }
+
+    .legal {
+        margin-top: 20px;
+        font-size: 0.9em;
     }
 }

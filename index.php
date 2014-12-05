@@ -17,7 +17,7 @@
             </div>
             <div class="row row-fanzines">
                 <section class="col-md-12">
-                    <h2>Fanzine En Los Nervios <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'fanzine' )->ID ); ?>">Ver catálogo completo</a></small></h2>
+                    <h2>Fanzine <strong>En Los Nervios</strong> <small class="btn btn-default"><a href="<?php echo get_permalink( get_page_by_path( 'fanzine' )->ID ); ?>">Ver catálogo completo</a></small></h2>
                     <?php get_section_content( 'fanzine' ); ?>
                 </section>
             </div>
@@ -44,13 +44,21 @@
                             <strong>Correo electrónico</strong><br>
                             fanzine@enlosnervios.org
                             <br><br>
+                            <p>Otras direcciones de correo están disponibles en la página de Contacto.</p>
                         </address>
                     </div>
                     <div class="info-column col-md-5">
-                        <h3>Sellos amigos</h3>
+                        <h3>Proyectos amigos</h3>
                     </div>
-                    <div class="info-column col-md-4">
-                        <h3>Copyleft</h3>
+                    <div class="legal info-column col-md-4">
+                        <p>Algunos derechos reservados 2014.
+                        <p>Todos los textos de enlosnervios.org son publicados bajo los términos de la licencia
+                        <strong>Creative Commons CC-BY 4.0 Internacional</strong>.</p>
+                        <p><i class="openwebicons-cc"></i> <i class="openwebicons-cc-by"></i> </p>
+                        <ul class="list-inline">
+                            <li><a href="http://github.com/enlosnervios/fanzine">Código fuente de este sitio</a></li>
+                            <li>| <a href="#">Paquete de difusión</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

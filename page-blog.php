@@ -15,8 +15,11 @@
 
               while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
                   <article class="col-md-8 col-md-offset-2">
-                      <h1><?php the_title(); ?></h1>
-                      <?php the_content( 'Seguir leyendo »' ); ?>
+                      <h1><a href="<?php esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h1>
+
+                      <?php get_blog_post_aside(); ?>
+
+                      <?php global $more; $more = 0; the_content( 'Seguir leyendo »' ); ?>
                   </article><?php
               endwhile;
             endif; ?>
