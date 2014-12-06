@@ -8,10 +8,10 @@
               while ( have_posts() ) : the_post(); ?>
                 <?php if ( get_post_type( get_the_ID() ) != 'post' ) : ?>
                   <article class="col-md-10">
-                    <div class="col-md-5 thumbnail">
+                    <div class="col-md-4 thumbnail">
                         <?php the_post_thumbnail(); ?>
                     </div>
-                    <div class="col-md-6 col-md-offset-1">
+                    <div class="col-md-7 col-md-offset-1">
                         <h1><?php the_title(); ?></h1>
                         <h2><?php get_authored_by(); ?></h2>
                         <hr>
