@@ -13,6 +13,8 @@ $icon-font-path            : "../../bower_components/bootstrap-sass-official/ass
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
 @import url(http://weloveiconfonts.com/api/?family=openwebicons);
 
+$anchor_background         : lighten( $brand-primary,50%);
+
 @font-face {
     font-family: "Universalis";
     src: url("../fonts/UniversalisADFStd-Cond.woff");
@@ -30,6 +32,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Open Sans Condensed";
+}
+
+h1 a:hover {
+    background: $anchor_background;
+    text-decoration: none;
 }
 
 nav {
@@ -106,20 +113,30 @@ p {
         text-decoration: none;
     }
 
-    h1 a:hover {
-        background: lighten( $brand-primary,50%);
-    }
-
-    h2 {
-        text-align: center;
-    }
-
     p {
         font-family: $font-family-sans-serif;
     }
 
     #comments {
         margin-top: 50px;
+    }
+
+    #details {
+        margin-top: 10%;
+
+        ol {
+            font-style: italic;
+            padding-left: 0;
+            list-style-position: inside !important;
+            margin-top: 2em;
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+            -moz-column-gap: 15px;
+
+            li {
+                line-height: 2em;
+            }
+        }
     }
 }
 
@@ -130,8 +147,9 @@ p {
     overflow: hidden;
 
     a {
+        background: $anchor_background;
         font-size: 0.9em;
-        font-weight: bold;
+        padding: 0.5em;
     }
 
     aside {
@@ -222,6 +240,10 @@ p {
 
         h1 {
             margin-top: 0px !important;
+
+            a {
+                color: $text-color;
+            }
         }
     }
 

@@ -121,7 +121,7 @@ function get_blog_recent_post()
         if ( $blog_posts->have_posts() ) :
             while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
                 <div class="col-md-4">
-                    <h1><?php the_title(); ?></h1>
+                    <h1><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h1>
                 </div>
 
                 <article class="col-md-8">
@@ -156,28 +156,38 @@ function get_section_content( $post_type )
     $column_class = is_home() ? 'col-md-2' : 'col-md-3';
 
     if ( $fanzines->have_posts() ) :
-        while ( $fanzines->have_posts() ) : $fanzines->the_post();
-            $post_tag = get_the_tags(); ?>
+        while ( $fanzines->have_posts() ) : $fanzines->the_post(); ?>
 
             <div class="<?php echo $column_class; ?>">
                 <a href="<?php the_permalink(); ?>" class="thumbnail">
                     <?php the_post_thumbnail(); ?>
                     <div class="caption">
                         <p><strong><?php the_title(); ?></strong></p>
-                        <?php
-                            if ( $post_tag ) : ?>
-                                <p><?php
-                                foreach ( $post_tag as $tag ) :
-                                    echo $tag->name;
-                                endforeach; ?>
-                                </p><?php
-                            endif;
-                        ?>
+                        <?php get_authored_by(); ?>
                     </div>
                 </a>
             </div>
         <?php endwhile;
     endif;
+}
+
+function get_authored_by()
+{
+    $post_tag    = get_the_tags();
+    $authored_by = '';
+    $last_author = end( $post_tag );
+
+    foreach ( $post_tag as $key => $author )
+    {
+        $authored_by .= $author->name;
+
+        if ( sizeof( $post_tag ) > 1 && $key != $last_author->term_id )
+        {
+            $authored_by .= ' / ';
+        }
+    }
+
+    echo $authored_by;
 }
 
 function autop_the_content( $content )
