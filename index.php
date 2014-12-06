@@ -47,8 +47,23 @@
                             <p>Otras direcciones de correo están disponibles en la página de Contacto.</p>
                         </address>
                     </div>
-                    <div class="info-column col-md-5">
+                    <div class="info-column friends col-md-5">
                         <h3>Proyectos amigos</h3>
+                        <div class="col-md-4">
+                            <a href="http://facebook.com/EverythingWentZine">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/wentzine-logo.jpg" alt="Estampita Records">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="http://estampitarecords.com">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/estampita-logo.jpg" alt="Estampita Records">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="http://vialacteaediciones.com">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/vialactea-logo.jpg" alt="Estampita Records">
+                            </a>
+                        </div>
                     </div>
                     <div class="legal info-column col-md-4">
                         <p>Algunos derechos reservados 2014.
