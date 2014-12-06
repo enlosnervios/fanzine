@@ -71,7 +71,7 @@
                         <strong>Creative Commons CC-Atribución 4.0 Internacional</strong>.</p>
                         <p><i class="openwebicons-cc"></i> <i class="openwebicons-cc-by"></i> </p>
                         <ul class="list-inline">
-                            <li><a href="http://github.com/enlosnervios/fanzine">Código fuente de este sitio</a></li>
+                            <li><a href="http://github.com/enlosnervios/fanzine">Código fuente</a></li>
                             <li><a href="#">Paquete de difusión</a></li>
                         </ul>
                     </div>
