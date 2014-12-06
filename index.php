@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
     <div id="banner" class="jumbotron">
-        <img class="banner-component col-md-6" src="<?php header_image(); ?>" alt="Portada" />
-        <aside class="banner-component col-md-5 col-md-offset-1">
+        <img class="banner-component col-md-7" src="<?php header_image(); ?>" alt="Portada" />
+        <aside class="banner-component col-md-4">
             <?php get_banner_introduction(); ?>
         </aside>
     </div>

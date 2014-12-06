@@ -51,6 +51,12 @@ function register_albums()
 }
 add_action( 'init', 'register_albums' );
 
+function get_javascript_dependencies()
+{
+    wp_enqueue_script( 'jquery-masonry' );
+}
+//add_action( 'wp_enqueue_scripts', 'get_javascript_dependencies' );
+
 function get_post_type_by_page_name()
 {
     global $post;
@@ -153,9 +159,9 @@ function get_section_content( $post_type )
         while ( $fanzines->have_posts() ) : $fanzines->the_post();
             $post_tag = get_the_tags(); ?>
 
-            <div class="col-xs-5 <?php echo $column_class; ?>">
+            <div class="<?php echo $column_class; ?>">
                 <a href="<?php the_permalink(); ?>" class="thumbnail">
-                    <?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+                    <?php the_post_thumbnail(); ?>
                     <div class="caption">
                         <p><strong><?php the_title(); ?></strong></p>
                         <?php

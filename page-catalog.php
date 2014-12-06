@@ -8,7 +8,7 @@
     <div id="main">
         <div class="container">
             <div class="row">
-              <article class="col-md-12">
+              <article class="col-md-12 clearfix">
                 <?php
                 if ( have_posts() ) :
                   while ( have_posts() ) : the_post(); ?>

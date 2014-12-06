@@ -15,7 +15,7 @@
 
               while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
                   <article class="col-md-8 col-md-offset-2">
-                      <h1><a href="<?php esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h1>
+                      <h1><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h1>
 
                       <?php get_blog_post_aside(); ?>
 

@@ -24,6 +24,7 @@
                         if ( is_blog_subdomain() ) : ?>
                             <small>Blog</small><?php
                         endif; ?>
+                        </h1>
                     </a>
                 </div>
             </div>

@@ -41,6 +41,10 @@ nav {
 
 p {
     font-family: "Open Sans";
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 .navbar-brand {
@@ -126,7 +130,12 @@ p {
     overflow: hidden;
 
     a {
+        font-size: 0.9em;
         font-weight: bold;
+    }
+
+    aside {
+        margin-left: 5% !important;
     }
 
     h1 {
@@ -139,7 +148,7 @@ p {
         padding-left: 0;
 
         p {
-            font-size: 1em !important;
+            font-size: 0.95em !important;
         }
     }
 
@@ -201,6 +210,10 @@ p {
         article {
             -moz-column-count: 2;
             -webkit-column-count: 2;
+            column-count: 2;
+            -moz-column-gap: 3em;
+            -webkit-column-gap: 3em;
+            column-gap: 3em;
         }
 
         p {
@@ -215,6 +228,7 @@ p {
     .row-fanzines {
         background-color: #eee;
         box-shadow: inset 0 0 5px #aaa;
+        margin-bottom: 20px;
     }
 
 }
